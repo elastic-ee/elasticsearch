@@ -36,4 +36,4 @@ cp XPackBuild.class ./x-pack-core-$version/org/elasticsearch/xpack/core/
 cp License.class ./x-pack-core-$version/org/elasticsearch/license/
 jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
 
-cp x-pack-core-$version.patched.jar x-pack-core-$version.jar
+mv x-pack-core-$version.patched.jar x-pack-core-$version.jar
