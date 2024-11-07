@@ -1,3 +1,3 @@
-# Personal Elasticsearch Docker Image
+# Elasticsearch
 
-This is a personal Elasticsearch Docker image for development purposes.
+Elasticsearch with enterprise features enabled for development purposes only.
