@@ -1,5 +1,5 @@
 #!/bin/bash
-v=( ${VERSION//./ } )
+v=(${VERSION//./ })
 branch="${v[0]}.${v[1]}"
 version="${v[0]}.${v[1]}.${v[2]}"
 
