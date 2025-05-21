@@ -21,6 +21,8 @@ sed -i '/void validate()/ s/$/}/' License.java
 sed -i '/boolean verifyLicense(/{h;s/verifyLicense/verifyLicense2/;x;G}' LicenseVerifier.java
 sed -i '/boolean verifyLicense(/ s/$/return true;}/' LicenseVerifier.java
 
+ls -lah /usr/share/elasticsearch/modules && exit 1
+
 # Build class files
 javac -cp "/usr/share/elasticsearch/lib/*:/usr/share/elasticsearch/modules/x-pack-core/*" LicenseVerifier.java
 javac -cp "/usr/share/elasticsearch/lib/*:/usr/share/elasticsearch/modules/x-pack-core/*" License.java
@@ -30,12 +32,8 @@ cp /usr/share/elasticsearch/modules/x-pack-core/x-pack-core-$version.jar x-pack-
 unzip -q x-pack-core-$version.jar -d ./x-pack-core-$version
 
 # Copy patched classes
-cp LicenseVerifier.class ./x-pack-core-$version/org/elasticsearch/license/
-cp License.class ./x-pack-core-$version/org/elasticsearch/license/
-
-if [ "${v[0]}" = "8" ]; then
-    cp XPackBuild.class ./x-pack-core-$version/org/elasticsearch/xpack/core/
-fi
+# cp LicenseVerifier.class ./x-pack-core-$version/org/elasticsearch/license/
+# cp License.class ./x-pack-core-$version/org/elasticsearch/license/
 
 jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
 
