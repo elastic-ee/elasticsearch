@@ -22,6 +22,7 @@ if curl -f -s -H "Authorization: Bearer $TOKEN" https://ghcr.io/v2/$REPO/manifes
 fi
 
 # Build image
-docker build --build-arg VERSION=$es_version -t $IMAGE --push --cache-from type=registry,ref=$LATEST_IMAGE .
+docker build --build-arg VERSION=$es_version -t $IMAGE --cache-from type=registry,ref=$LATEST_IMAGE .
+docker push $IMAGE
 docker tag $IMAGE $LATEST_IMAGE
 docker push $LATEST_IMAGE

@@ -2,7 +2,7 @@ ARG VERSION=8.15.1
 
 FROM docker.elastic.co/elasticsearch/elasticsearch:${VERSION} AS baseline
 
-FROM openjdk:21-jdk-buster AS patch
+FROM openjdk:24-jdk-buster AS patch
 
 ARG VERSION
 ENV VERSION=${VERSION}
