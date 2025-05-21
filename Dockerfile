@@ -20,4 +20,4 @@ RUN bash patch.sh
 FROM baseline
 LABEL org.opencontainers.image.source="https://github.com/elastic-ee/elasticsearch/"
 
-# COPY --from=patch /patch/x-pack-core-* /usr/share/elasticsearch/modules/x-pack-core/
+COPY --from=patch /patch/dist/* /usr/share/elasticsearch/modules/x-pack-core/

@@ -36,3 +36,5 @@ unzip -q x-pack-core-$version.jar -d ./x-pack-core-$version
 # jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
 
 # mv x-pack-core-$version.patched.jar x-pack-core-$version.jar
+mkdir -p dist
+cp x-pack-core-$version.jar dist/
