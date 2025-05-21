@@ -33,6 +33,6 @@ unzip -q x-pack-core-$version.jar -d ./x-pack-core-$version
 # cp LicenseVerifier.class ./x-pack-core-$version/org/elasticsearch/license/
 # cp License.class ./x-pack-core-$version/org/elasticsearch/license/
 
-jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
+# jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
 
-mv x-pack-core-$version.patched.jar x-pack-core-$version.jar
+# mv x-pack-core-$version.patched.jar x-pack-core-$version.jar
