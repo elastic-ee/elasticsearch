@@ -21,8 +21,6 @@ sed -i '/void validate()/ s/$/}/' License.java
 sed -i '/boolean verifyLicense(/{h;s/verifyLicense/verifyLicense2/;x;G}' LicenseVerifier.java
 sed -i '/boolean verifyLicense(/ s/$/return true;}/' LicenseVerifier.java
 
-ls -lah /usr/share/elasticsearch/modules && exit 1
-
 # Build class files
 javac -cp "/usr/share/elasticsearch/lib/*:/usr/share/elasticsearch/modules/x-pack-core/*" LicenseVerifier.java
 javac -cp "/usr/share/elasticsearch/lib/*:/usr/share/elasticsearch/modules/x-pack-core/*" License.java
