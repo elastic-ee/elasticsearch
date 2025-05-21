@@ -30,11 +30,10 @@ cp /usr/share/elasticsearch/modules/x-pack-core/x-pack-core-$version.jar x-pack-
 unzip -q x-pack-core-$version.jar -d ./x-pack-core-$version
 
 # Copy patched classes
-# cp LicenseVerifier.class ./x-pack-core-$version/org/elasticsearch/license/
-# cp License.class ./x-pack-core-$version/org/elasticsearch/license/
+cp LicenseVerifier.class ./x-pack-core-$version/org/elasticsearch/license/
+cp License.class ./x-pack-core-$version/org/elasticsearch/license/
 
-# jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
+jar -cf x-pack-core-$version.patched.jar -C x-pack-core-$version/ .
 
-# mv x-pack-core-$version.patched.jar x-pack-core-$version.jar
 mkdir -p dist
-cp x-pack-core-$version.jar dist/
+mv x-pack-core-$version.patched.jar dist/x-pack-core-$version.jar
